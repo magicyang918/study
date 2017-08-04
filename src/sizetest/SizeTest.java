@@ -66,7 +66,7 @@ public class SizeTest {
 		System.out.println("new HashMap<>() 自身占用空间为： " + MySizeOf.sizeOf(new HashMap<>()));
 		System.out.println("new HashMap<>() 全部占用空间为： " + MySizeOf.fullSizeOf(new HashMap<>()));
 
-		A a = new A();
+		A a = new A(); 
 		System.out.println("new A() 自身占用空间为： " + MySizeOf.sizeOf(a));
 		System.out.println("new A() 全部占用空间为： " + MySizeOf.fullSizeOf(a));
 		
