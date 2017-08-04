@@ -7,7 +7,6 @@
 
 package sizetest;
 
-
 /**
  * 以下测试都是未压缩情况的测试 -XX:-UseCompressedOops
  * 
@@ -17,32 +16,41 @@ package sizetest;
 public class SizeTest2 {
 
 	public static void main(String[] args) throws IllegalAccessException, InterruptedException {
-		A a = new A();
+		C c = new C();
+		B b = new B();
+		A a = new A(b);
+		
+		Thread.sleep(20000);
+		c = null;
 		Thread.sleep(10000000);
 	}
 
 	public static class A {
-		//静态变量不在A的实例对象的占用空间中
+		// 静态变量不在A的实例对象的占用空间中
 		public static int i = 10;
-		
+
 		// s1的引用占8个字节，s1自身存储占64字节
-		String s1 = new String("a");
+		String s1 = new String("1");
+
+		B b;
 		
-		B b = new B();
+		A (B b) {
+			this.b = b;
+		}
 	}
 
 	public static class B {
 		int i = 0;
-		
-		char value[] = new char[0];
-		
+
+		int valueb[] = new int[0];
+
 		C c = new C();
 	}
-	
+
 	public static class C {
 		int i = 0;
-		
-		char value[] = {'a', 'b'};
+
+		int valuec[] = { 100, 200, 300 };
 	}
 
 }
