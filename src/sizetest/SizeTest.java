@@ -70,6 +70,9 @@ public class SizeTest {
 		System.out.println("new A() 自身占用空间为： " + MySizeOf.sizeOf(a));
 		System.out.println("new A() 全部占用空间为： " + MySizeOf.fullSizeOf(a));
 		
+		System.out.println("new Byte[1024 * 1024] 自身占用空间为： " + MySizeOf.sizeOf(new byte[1024 ]));
+		System.out.println("new Byte[1024 * 1024] 全部占用空间为： " + MySizeOf.fullSizeOf(new byte[1024 ]));
+		
 		Thread.sleep(1000000);
 		
 //		System.out.println("A.class 自身占用空间为： " + MySizeOf.sizeOf(A.class));
