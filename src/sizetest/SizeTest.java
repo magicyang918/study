@@ -7,14 +7,14 @@
 
 package sizetest;
 
+import utils.MySizeOf;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import com.zzh.size.MySizeOf;
 
 /**
  * 以下测试都是未压缩情况的测试 -XX:-UseCompressedOops
